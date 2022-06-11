@@ -10,7 +10,6 @@ public class PirateScript : MonoBehaviour
         if (collision.gameObject.tag.Equals("Basket"))
         {
             SceneManager.LoadScene("GameOverScreen");
-
         }
 
     }

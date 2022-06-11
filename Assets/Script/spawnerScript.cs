@@ -9,7 +9,6 @@ public class spawnerScript : MonoBehaviour
     public float spawnTime;
     public float spawnDelay;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -24,14 +23,11 @@ public class spawnerScript : MonoBehaviour
     {
         var position = Random.Range(transform.position.x + -3f, transform.position.x + 5.5f);
 
-
-
         int randomIndex = Random.Range(0, spawnees.Length);
         GameObject spawnee = spawnees[randomIndex];
 
         // Creates clone of the spawnee object, at a given position and rotation
         Instantiate(spawnee, new Vector3(position, transform.position.y - 1), transform.rotation);
-
 
         if (stopspawning)
         {

@@ -47,6 +47,9 @@ public class NavigateManager : MonoBehaviour
         SceneManager.LoadScene(gameoverScreen);
     }
 
-
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 
 }

@@ -10,7 +10,6 @@ public class Setting : MonoBehaviour
     private int _dropDownIndex;
     private Text _selectedText;
 
-
     private void Start()
     {
         PlayerPrefs.SetInt("Difficulity", 1);
