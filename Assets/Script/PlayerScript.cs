@@ -99,8 +99,8 @@ public class PlayerScript : MonoBehaviour
                     explosion.Play();
 
                     Destroy(collision.gameObject);
-                }
-        */
+                }*/
+
 
         else if (collision.gameObject.tag.Equals("Pirate"))
         {
