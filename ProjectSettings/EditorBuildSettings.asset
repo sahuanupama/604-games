@@ -6,13 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/GameScnes/GameStatrtScreen.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/GameScnes/MenuScreen.unity
     guid: 705bc3ae6348a9e409bf6fbf6b349947
   - enabled: 1
-    path: Assets/GameScnes/SettingSceen.unity
+    path: Assets/GameScnes/GameStartScreen.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/GameScnes/SettingScreen.unity
     guid: 4bb8565e0db756e429a7fe74c77bb226
   - enabled: 1
     path: Assets/GameScnes/GameOver.unity

@@ -32,7 +32,7 @@ public class LevelScript : MonoBehaviour
 
         else
         {
-            SceneManager.LoadScene("Gameover");
+            SceneManager.LoadScene("MenuScreen");
         }
 
     }
