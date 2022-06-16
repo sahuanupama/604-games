@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GameScnes/LooseScreen.unity
     guid: 04fa683c1a1bde54cad3c495252f6e27
+  - enabled: 1
+    path: Assets/GameScnes/Level-2Scene.unity
+    guid: 94ae52b4ed14b004a93d733ea145fb85
   m_configObjects: {}

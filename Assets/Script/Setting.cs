@@ -12,14 +12,14 @@ public class Setting : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.SetInt("Difficulity", 1);
+        dropDown.value = PlayerPrefs.GetInt("Difficulty", 0);
     }
 
     // Update is called once per frame
     public void SetDifficulty()
     {
         _dropDownIndex = dropDown.value;
-        PlayerPrefs.SetInt("Difficulity", _dropDownIndex);
+        PlayerPrefs.SetInt("Difficulty", _dropDownIndex);
         PlayerPrefs.Save();
         SceneManager.LoadScene("MenuScreen");
     }

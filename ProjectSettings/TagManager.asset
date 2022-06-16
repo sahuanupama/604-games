@@ -8,6 +8,10 @@ TagManager:
   - New Piskel-1.png
   - Coin
   - Pirate
+  - Joystick
+  - TextTimer
+  - GiftBox
+  - Toffe
   layers:
   - Default
   - TransparentFX

@@ -11,6 +11,7 @@ public class NavigateManager : MonoBehaviour
     public string settingsScreen = "SettingScreen";
     public string gameoverScreen = "GameOverScreen";
     public string gamewinScreen = "WinScreen";
+    public string gameSeconLevelScreen = "Level-2Scene";
 
     public void LoadMenu()
     {
@@ -40,6 +41,11 @@ public class NavigateManager : MonoBehaviour
     public void LoadPreviousScene()
     {
         int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+    }
+
+    public void LoadSecondScene()
+    {
+        SceneManager.LoadScene("gameLevel-2Scene");
     }
 
     public void LoadGameOver()

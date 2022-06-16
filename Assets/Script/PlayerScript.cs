@@ -9,27 +9,25 @@ public class PlayerScript : MonoBehaviour
     public float halfPlayerSize = 0.5f;
     public float myTimer = 60f;
     public float dropdownSpeed = -2;
-    public int counter = 0;
-    public int wincounter = 0;
-
-    [SerializeField] Joystick joystick;
-    [SerializeField] float joyHorizontal;
-    [SerializeField] float joyVertical;
-
-    [SerializeField] Camera camera;
+    public int pirateCounter = 0;
+    public int coinCounter = 0;
     public float screenSizeX;
     public float screenSizeY;
     private object timerText;
 
+    [SerializeField] Joystick joystick;
+    [SerializeField] float joyHorizontal;
+    [SerializeField] float joyVertical;
+    [SerializeField] Camera MainCamera;
     [SerializeField] AudioSource explosion;
+    [SerializeField] AudioSource yahoo;
 
     // Start is called before the first frame update
     void Start()
     {
-        screenSizeY = camera.orthographicSize * 2;
+        screenSizeY = MainCamera.orthographicSize * 2;
         screenSizeX = screenSizeY * Screen.width / Screen.height;
         // ScoreManager.instance.AddPoints();
-        counter = 0;
 
         if (PlayerPrefs.GetInt("Difficulty").Equals(0))
         {
@@ -51,9 +49,6 @@ public class PlayerScript : MonoBehaviour
         joyHorizontal = joystick.Horizontal;
         joyVertical = joystick.Vertical;
 
-        joyHorizontal = joystick.Horizontal;
-        joyVertical = joystick.Vertical;
-
         float horizonalMovement = joystick.Horizontal * playerSpeed * Time.deltaTime;
         float verticalMovement = joystick.Vertical * playerSpeed * Time.deltaTime;
 
@@ -66,28 +61,33 @@ public class PlayerScript : MonoBehaviour
         {
             transform.position = new Vector2(newXPos, newYPos);
         }
+        //  this.GetComponent<Rigidbody2D>().AddForce(newVector2(2, dropdownSpeed));
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        counter++;
-
         if (collision.gameObject.tag.Equals("Coin"))
         {
-            wincounter++;
-            if (wincounter == 3)
+            coinCounter++;
+            Debug.Log("Coin: " + coinCounter);
+            Destroy(collision.gameObject);
+            if (coinCounter == 10)
             {
+                Debug.Log("coin counter");
+                yahoo.Play();
                 SceneManager.LoadScene("WinScreen");
             }
         }
-
         else if (collision.gameObject.tag.Equals("Pirate"))
         {
-            Destroy(collision.gameObject);
 
-            counter++;
-            if (counter == 2)
+            pirateCounter++;
+            Debug.Log("Pirate: " + pirateCounter);
+            Destroy(collision.gameObject);
+            if (pirateCounter == 2)
             {
+                Debug.Log("IN Pirate");
+                explosion.Play();
                 SceneManager.LoadScene("GameOver");
             }
         }
